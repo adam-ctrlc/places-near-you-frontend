@@ -1,0 +1,1 @@
+export { PlacesMap } from "./Map";
