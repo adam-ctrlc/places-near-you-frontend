@@ -1,7 +1,7 @@
 // GitHub configuration
 export const GITHUB = {
   username: "adam-ctrlc",
-  repo: "places-around-you",
+  repo: "places-near-you-frontend",
 
   // URLs
   get profileUrl() {
