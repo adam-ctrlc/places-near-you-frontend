@@ -1,5 +1,7 @@
 # LocalFinder Frontend
 
+![LocalFinder](./public/localhost_5173_.png)
+
 A modern React application for discovering local places around you. Find restaurants, cafes, parks, and more with an interactive map interface.
 
 ## ✨ Features
