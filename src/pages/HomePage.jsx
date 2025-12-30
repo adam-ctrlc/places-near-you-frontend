@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Header } from "../layout";
 import { Footer } from "../layout";
 import { SearchBar, FeaturedCard, Chip } from "../common";
 import {
@@ -27,8 +26,6 @@ export function HomePage() {
 
   return (
     <div className="relative flex h-auto min-h-screen w-full flex-col">
-      <Header variant="transparent" />
-
       <main className="flex-1">
         <section className="relative w-full">
           <div className="absolute inset-0 z-0 h-[600px] w-full bg-gradient-to-br from-slate-900 via-primary/20 to-slate-900" />

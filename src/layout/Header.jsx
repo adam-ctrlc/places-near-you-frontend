@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useSearchParams } from "react-router-dom";
 import { SearchBar } from "../common";
 
 export function Header({ variant = "default", showSearch = false }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("q") || "";
 
   const navLinkClass = ({ isActive }) =>
     `text-sm font-medium transition-colors ${
@@ -109,7 +111,9 @@ export function Header({ variant = "default", showSearch = false }) {
             LocalFinder
           </h2>
         </NavLink>
-        {showSearch && <SearchBar variant="compact" />}
+        {showSearch && (
+          <SearchBar variant="compact" initialCategory={query} key={query} />
+        )}
       </div>
       <div className="flex items-center gap-6">
         <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
@@ -124,27 +128,10 @@ export function Header({ variant = "default", showSearch = false }) {
           >
             Explore
           </NavLink>
-          <NavLink
-            to="/search"
-            className={({ isActive }) =>
-              `transition-colors ${
-                isActive ? "text-primary" : "hover:text-primary"
-              }`
-            }
-          >
-            Search
-          </NavLink>
+          <a href="#" className="hover:text-primary transition-colors">
+            Saved
+          </a>
         </nav>
-        <div className="h-6 w-px bg-slate-200 dark:bg-slate-700 hidden lg:block"></div>
-        <div className="flex items-center gap-4">
-          <button className="relative text-slate-500 dark:text-slate-300 hover:text-primary transition-colors">
-            <span className="material-symbols-outlined">notifications</span>
-            <span className="absolute top-0 right-0 size-2 bg-red-500 rounded-full border-2 border-white dark:border-background-dark"></span>
-          </button>
-          <div className="size-9 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
-            U
-          </div>
-        </div>
       </div>
     </header>
   );

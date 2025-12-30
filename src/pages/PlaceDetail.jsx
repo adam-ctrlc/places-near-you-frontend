@@ -72,64 +72,6 @@ export function PlaceDetail() {
 
   return (
     <div className="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display">
-      <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-border-dark bg-surface-light dark:bg-[#111722]">
-        <div className="px-4 md:px-10 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-8">
-            <Link to="/" className="flex items-center gap-3">
-              <div className="text-primary">
-                <span className="material-symbols-outlined fill text-3xl">
-                  explore
-                </span>
-              </div>
-              <h2 className="text-lg font-bold tracking-tight">LocalFinder</h2>
-            </Link>
-            <nav className="hidden md:flex items-center gap-6">
-              <Link
-                to="/"
-                className="text-sm font-medium hover:text-primary transition-colors"
-              >
-                Home
-              </Link>
-              <Link
-                to="/search"
-                className="text-sm font-medium hover:text-primary transition-colors"
-              >
-                Explore
-              </Link>
-              <a
-                href="#"
-                className="text-sm font-medium hover:text-primary transition-colors"
-              >
-                Saved
-              </a>
-            </nav>
-          </div>
-          <div className="flex items-center gap-4">
-            <form
-              onSubmit={handleSearchSubmit}
-              className="relative hidden sm:block"
-            >
-              <label
-                htmlFor={searchInputId}
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
-              >
-                <span className="material-symbols-outlined">search</span>
-              </label>
-              <input
-                id={searchInputId}
-                name="search"
-                type="text"
-                placeholder="Search places..."
-                className="h-10 w-64 rounded-lg bg-slate-100 dark:bg-surface-dark border-none pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary placeholder:text-slate-400 dark:text-white outline-none"
-              />
-            </form>
-            <div className="size-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
-              U
-            </div>
-          </div>
-        </div>
-      </header>
-
       <main className="flex-1 w-full max-w-[1280px] mx-auto px-4 md:px-8 py-6">
         <div className="flex flex-wrap items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-6">
           <Link to="/" className="hover:text-primary transition-colors">
